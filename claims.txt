@@ -1,0 +1,77 @@
+
+
+* Programs are compilable with g++ assembler.cpp -o asm
+* Running the program ./asm bubble.asm
+* Programs are compilable with g++ emu.cpp -o emu
+* Running the emulatior ./ emu bubble.o
+
+Note: Keep "mnemonics.h" file in same directory while compiling the assembler
+
+Program format and structure:
+
+1. The assembler:
+
+*	Can handle extra spaces between operands and extra whitespaces except labels where providing space is neccessary after it's declarations. 
+
+*	Assembler can detect the following errors:
+	- Bogus mnemonic
+	- Incorrect label naming format
+	- Repeated label
+	- Label not found
+	- Label name can not be a keyword
+	- Missing operand
+	- More operands than expected
+	- Invalid operand format
+	- Incorret label format 
+
+*	Assembler can issue the following warnings:
+	- Unused label
+	- Integer overflow w.r.t signed 32- bit
+
+*	Stores mnemonic and their opcodes.
+*	Stores defined labels in program.
+*	Uses single routine for both pases to assemble the program.
+*	Generates an advanced listing file.
+*	Generates an object file with .o extension
+*	Listing and object files are empty if there are any errors.
+*	Can implement the instruction SET.
+
+2. The emulator: 
+
+*	My emulator is both interactive and log based. You can run each instruction line by line or output all the trace directly into file_name.txt
+
+*	Emulator can do following things:
+	- Trace current instruction only: -t
+	- See all read operations: -r
+	- See all write opereration: -w
+	- See the code segment: -before
+	- Trace all instructions at once and save trace to file_name.txt: -all
+	- See next instruction to be executed: -next
+	- See memory dump: -dump
+	- To view instructions: -help
+	- Print no. of instructions executed
+	- Detect some types of segmentation faults
+
+*	Unique Feature:
+	- Tells next instruction to be executed that can help in debugging.
+	- Is interactive
+	- Is very flexible with input and error handling
+	- For e.g. if given wrong input during addressing dump it asks again for the correct format
+	- Convenient dumping format asks for base and offset so doesn't overflows the screen.
+
+*	Can do other normal things in instruction as well.	
+*	Loads Object file
+*	Produces memory dump
+*	execute test program
+*	Detects errant programs
+
+
+3. Bubble sort: 
+
+*	Assemble
+*	Works
+
+
+
+
+
